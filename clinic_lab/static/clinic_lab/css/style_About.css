@@ -1,0 +1,92 @@
+:root {
+    --primary-color: #4a90e2;
+    --accent-color: #f5a623;
+    --background-color: #f7f7f7;
+    --text-color: #333333;
+    --white: #ffffff;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --transition: 0.3s ease;
+    --hero-height: 100vh;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* Hero-секция */
+  .hero {
+    position: relative;
+    height: var(--hero-height);
+    background: url("../images/hero-bg.jpg") center/cover no-repeat;
+  }
+  
+  .hero-overlay {
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.4), rgba(255, 140, 0, 0.4));
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero h1 {
+    color: var(--white);
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Контейнер основного контента */
+  .container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  /* Блок с информацией о проекте */
+  .about-info {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+  
+  /* Контакты */
+  .contacts {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+  }
+  
+  .contacts h2 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+  }
+  
+  .contact-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .contact-list li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  /* Футер */
+  .footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+  

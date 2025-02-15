@@ -1,19 +1,38 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
-<html>
-
+<html lang="ru">
 <head>
-    <title>О проекте</title>
-    <link rel="stylesheet" href="{% static 'clinic_lab/css/style_About.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О проекте</title>
+  <link rel="stylesheet" href="{% static 'clinic_lab/css/style_About.css' %}">
 </head>
-
 <body>
-    <div class="container">
-        <h1>О проекте</h1>
-        <p>{{ info }}</p>
-        <h2>Контакты</h2>
-        <p>Укажите здесь свои контактные данные, ссылки на обратную связь и т.д.</p>
-    </div>
-</body>
 
+  <header class="hero">
+    <div class="hero-overlay">
+      <h1>О проекте</h1>
+    </div>
+  </header>
+  
+  <main class="container">
+    <section class="about-info">
+      <p>{{ info }}</p>
+    </section>
+    
+    <section class="contacts">
+      <h2>Контакты</h2>
+      <p>Свяжитесь с нами любым удобным способом:</p>
+      <ul class="contact-list">
+        <li><strong>Email:</strong> ra.md@list.ru</li>
+        <li><strong>Телефон:</strong> +7 123 456 7890</li>
+        <li><strong>Адрес:</strong> ул. Косухина, д. 27А, Курск, Россия</li>
+      </ul>
+    </section>
+  </main>
+  
+  <footer class="footer">
+    <p>&copy; 2025 AleaKL. Все права защищены.</p>
+  </footer>
+</body>
 </html>

@@ -7,7 +7,8 @@ def index(request):
     context = {
         'project_description': "Это тестовый проект для демонстрации клинических рекомендаций.",
         'project_name': "AleaKL",
-        'project_tagline': 'Лучший сайт для клинических рекомендаций'
+        'project_tagline': 'Лучший сайт для клинических рекомендаций',
+        'author_name' : 'RaMd'
     }
     return render(request, 'index.html', context)
 
@@ -28,5 +29,6 @@ def clinical_recommendation_detail(request, pk):
 def about(request):
     context = {
         'info': "Здесь вы можете указать контакты и другую информацию о проекте."
+        'info': "Это тестовый проект для демонстрации клинических рекомендаций."
     }
     return render(request, 'about.html', context)

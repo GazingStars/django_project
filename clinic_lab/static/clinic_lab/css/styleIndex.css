@@ -102,6 +102,11 @@ body {
   display: flex;
   gap: 20px;
 }
+ 
+h2 a {
+  color: var( --text-color);
+  text-decoration: none;
+}
 
 .navbar nav ul li a {
   color: white;
