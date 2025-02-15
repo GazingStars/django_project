@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Клинические рекомендации</title>
+    <link rel="stylesheet" href="{% static 'clinic_lab/css/stylerecommendation_list.css'%}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Клинические рекомендации</h1>
+        {% for rec in recommendations %}
+        <div class="rec-block">
+            <div class="rec-title">{{ rec.title }}</div>
+            <div>{{ rec.description }}</div>
+            <div><strong>Комментарии:</strong> {{ rec.comments }}</div>
+            {% if rec.image %}
+            <div><img src="{{ rec.image.url }}" alt="Image" /></div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
