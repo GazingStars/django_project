@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ recommendation.title }}</title>
+  <link rel="stylesheet" href="{% static 'clinic_lab/css/clinical_recommendation_detail.css' %}">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>{{ recommendation.title }}</h1>
+    </header>
+    
+    <section class="general-info">
+      <h2>Общая информация</h2>
+      <p><strong>Название:</strong> {{ recommendation.general_info.title }}</p>
+      <p><strong>Кодировка (MCB):</strong> {{ recommendation.general_info.MCB }}</p>
+      <p><strong>Возрастная категория:</strong> {{ recommendation.general_info.Age_category }}</p>
+      <p><strong>Статус:</strong> {{ recommendation.general_info.Status }}</p>
+    </section>
+    
+    <section class="details">
+      <h2>Подробная информация</h2>
+      <div class="detail-item">
+        <h3>Описание</h3>
+        <div class="content">
+          {{ recommendation.description|linebreaks }}
+        </div>
+      </div>
+      
+      <div class="detail-item">
+        <h3>Список сокращений</h3>
+        <div class="content">
+          {{ recommendation.list_of_abbreviations|linebreaks }}
+        </div>
+      </div>
+      
+      <div class="detail-item">
+        <h3>Термины и определения</h3>
+        <div class="content">
+          {{ recommendation.terms_and_definitions|linebreaks }}
+        </div>
+      </div>
+      
+      <div class="detail-item">
+        <h3>Краткая информация</h3>
+        <div class="content">
+          {{ recommendation.Brief_information|linebreaks }}
+        </div>
+      </div>
+    </section>
+    
+    <footer class="footer">
+      <a href="{% url 'recommendation_list' %}" class="back-link">← Вернуться к списку рекомендаций</a>
+    </footer>
+  </div>
+</body>
+</html>

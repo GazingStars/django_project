@@ -22,7 +22,7 @@ def recommendation_list(request):
 
 def clinical_recommendation_detail(request, pk):
     rec = get_object_or_404(ClinicalRecommendation, pk=pk)
-    return render(request, 'clinic_lab/clinical_recommendation_detail.html', {'rec': rec})
+    return render(request, 'clinical_recommendation_detail.html', {'recommendation': rec})
 
 
 def about(request):
