@@ -1,26 +1,31 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
-
+<html lang="ru">
 <head>
-    <title>Клинические рекомендации</title>
-    <link rel="stylesheet" href="{% static 'clinic_lab/css/stylerecommendation_list.css'%}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Клинические рекомендации</title>
+  <link rel="stylesheet" href="{% static 'clinic_lab/css/stylerecommendation_list.css' %}">
 </head>
-
 <body>
-    <div class="container">
-        <h1>Клинические рекомендации</h1>
-        {% for rec in recommendations %}
-        <div class="rec-block">
-            <div class="rec-title">{{ rec.title }}</div>
-            <div>{{ rec.description }}</div>
-            <div><strong>Комментарии:</strong> {{ rec.comments }}</div>
-            {% if rec.image %}
-            <div><img src="{{ rec.image.url }}" alt="Image" /></div>
-            {% endif %}
+  <main class="container">
+    <header class="page-header">
+      <h1>Клинические рекомендации</h1>
+    </header>
+    <section class="recommendations">
+      {% for rec in cardInfo %}
+      <a href="{% url 'clinical_recommendation_detail' rec.id %}" class="recommendation">
+        <header class="rec-header">
+          <h2 class="rec-title">{{ rec.title }}</h2>
+        </header>
+        <div class="rec-body">
+          <p><strong>Кодирование по Международной статистической классификации болезней и проблем, связанных со здоровьем: </strong> {{ rec.MCB }}</p>
+          <p><strong>Возрастная категория:</strong> {{ rec.Age_category }}</p>
+          <p><strong>Статус:</strong> {{ rec.Status }}</p>
         </div>
-        {% endfor %}
-    </div>
+      </a>
+      {% endfor %}
+    </section>
+  </main>
 </body>
-
 </html>

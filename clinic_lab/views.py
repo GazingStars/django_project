@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import ClinicalRecommendation
+from .models import GeneralInformationOfClinicalRecommendation
+from django.shortcuts import render, get_object_or_404
 
 def index(request):
     context = {
@@ -11,10 +13,17 @@ def index(request):
 
 def recommendation_list(request):
     recommendations = ClinicalRecommendation.objects.all()
+    cardInfo = GeneralInformationOfClinicalRecommendation.objects.all()
     context = {
-        'recommendations': recommendations
+        'recommendations': recommendations,
+        'cardInfo' : cardInfo
     }
     return render(request, 'recommendation_list.html', context)
+
+def clinical_recommendation_detail(request, pk):
+    rec = get_object_or_404(ClinicalRecommendation, pk=pk)
+    return render(request, 'clinic_lab/clinical_recommendation_detail.html', {'rec': rec})
+
 
 def about(request):
     context = {
