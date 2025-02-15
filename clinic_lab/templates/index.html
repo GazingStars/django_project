@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная — {{ project_name }}</title>
+    <link rel="stylesheet" href="{% static 'clinic_lab/css/styleIndex.css' %}">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="http://127.0.0.1:8000/recommendation/">Рекомендации</a></li>
+                <li><a href="#">Для врачей</a></li>
+                <li><a href="#">Новости и обновления</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>{{ project_name }}</h1>
+            <p class="subtitle">{{ project_tagline }}</p>
+            <a href="#about" class="cta-button">Подробнее</a>
+        </div>
+    </header>
+
+    <main class="content">
+        <section id="about" class="section about-section">
+            <h2>О проекте</h2>
+            <p>{{ project_description }}</p>
+        </section>
+        <section class="section features-section">
+            <h2>Особенности</h2>
+            <ul class="features-list">
+                <li>
+                    <h3>Простота</h3>
+                    <p>Интуитивно понятный интерфейс для быстрого освоения.</p>
+                </li>
+                <li>
+                    <h3>Безопасность</h3>
+                    <p>Надёжная защита данных с современными технологиями.</p>
+                </li>
+                <li>
+                    <h3>Расширяемость</h3>
+                    <p>Гибкая архитектура, позволяющая масштабировать проект.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 {{ author_name }}. Все права защищены.</p>
+        <p><a href="https://github.com/username/project">GitHub проекта</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener("scroll", function () {
+            const navbar = document.querySelector(".navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+</body>
+
+</html>
