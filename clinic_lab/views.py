@@ -28,7 +28,6 @@ def clinical_recommendation_detail(request, pk):
 
 def about(request):
     context = {
-        'info': "Здесь вы можете указать контакты и другую информацию о проекте."
         'info': "Это тестовый проект для демонстрации клинических рекомендаций."
     }
     return render(request, 'about.html', context)
